@@ -1,0 +1,39 @@
+<script>
+    // הנה הכתובת שלך כבר בפנים:
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbx7NrrOlNeEa94JPWgPb25wVa-YdLAgLflftVNnZz__ZbDRbLFFy3J4Pb2HaGvfsfL39g/exec';
+
+    const form = document.forms['financeForm'];
+    const btn = document.getElementById('submitBtn');
+    const msg = document.getElementById('message');
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        btn.disabled = true;
+        btn.innerText = "שולח...";
+
+        // המרת הנתונים לאובייקט
+        const formData = new FormData(form);
+        const data = {};
+        formData.forEach((value, key) => data[key] = value);
+
+        fetch(scriptURL, {
+            method: 'POST',
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            msg.innerHTML = '<div class="alert alert-success">הנתונים נשמרו בהצלחה!</div>';
+            form.reset();
+            btn.disabled = false;
+            btn.innerText = "שמור נתונים";
+            
+            // העלמת ההודעה אחרי 3 שניות
+            setTimeout(() => { msg.innerHTML = ''; }, 3000);
+        })
+        .catch(error => {
+            msg.innerHTML = '<div class="alert alert-danger">שגיאה בשמירה, נסה שוב.</div>';
+            console.error('Error!', error.message);
+            btn.disabled = false;
+            btn.innerText = "שמור נתונים";
+        });
+    });
+</script>
