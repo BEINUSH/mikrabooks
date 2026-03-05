@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>מקרא בוקס | הוצאה לאור ושירותי דפוס למוסדות וארגונים</title>
-    <meta name="description" content="מקרא בוקס – הוצאה לאור עצמאית, עריכה, עיצוב גרפי והדפסה. שיתוף פעולה עם יפה נוף – מקרא ראשי. שירותים מקצועיים למוסדות וארגונים.">
+    <title>מקרא הוצאה לאור | הוצאה לאור מקצועית לספרים תורניים</title>
+    <meta name="description" content="מקרא הוצאה לאור – הוצאה לאור מקצועית, עריכה, עיצוב גרפי, עימוד והדפסה. נכנסת למקרא, יצאת לאור.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Frank+Ruhl+Libre:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;900&family=Frank+Ruhl+Libre:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,8 +16,8 @@
 <nav class="navbar" id="navbar">
     <div class="container nav-container">
         <a href="#" class="logo">
-            <span class="logo-main">מקרא בוקס</span>
-            <span class="logo-sub">MikraBooks</span>
+            <span class="logo-main">מקרא</span>
+            <span class="logo-sub">הוצאה לאור</span>
         </a>
         <button class="nav-toggle" id="navToggle" aria-label="תפריט">
             <span></span><span></span><span></span>
@@ -25,24 +25,59 @@
         <ul class="nav-links" id="navLinks">
             <li><a href="#home">ראשי</a></li>
             <li><a href="#about">אודות</a></li>
-            <li><a href="#partnership">שיתוף פעולה</a></li>
             <li><a href="#services">שירותים</a></li>
+            <li><a href="#books">הספרים שראו אור</a></li>
             <li><a href="#process">תהליך העבודה</a></li>
-            <li><a href="#contact" class="btn-nav">צרו קשר</a></li>
+            <li><a href="#blog">חדש במקרא</a></li>
+            <li><a href="#contact" class="btn-nav">להצעת מחיר</a></li>
         </ul>
     </div>
 </nav>
 
 <!-- Hero -->
 <section class="hero" id="home">
-    <div class="hero-overlay"></div>
+    <div class="hero-bg-shapes">
+        <div class="hero-shape hero-shape-1"></div>
+        <div class="hero-shape hero-shape-2"></div>
+        <div class="hero-shape hero-shape-3"></div>
+    </div>
     <div class="container hero-content">
-        <h1>הסיפור שלכם.<br><span class="highlight">הספר שלנו.</span></h1>
-        <p class="hero-subtitle">הוצאה לאור מקצועית למוסדות וארגונים – מהרעיון ועד הספר המוגמר</p>
-        <div class="hero-buttons">
-            <a href="#contact" class="btn btn-primary">בואו נדבר על הפרויקט שלכם</a>
-            <a href="#services" class="btn btn-outline">השירותים שלנו</a>
+        <div class="hero-text">
+            <div class="hero-badge">נכנסת למקרא, יצאת לאור</div>
+            <h1>המקום במדף,<br><span class="highlight">שמור לספר שלך</span></h1>
+            <p class="hero-subtitle">מוציאים לאור במהירות האור – עימוד מקצועי, הגהה לשונית, עיצוב כריכה, הדפסה והפצה. הכל תחת קורת גג אחת.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary btn-glow">להצעת מחיר</a>
+                <a href="#books" class="btn btn-outline-light">הספרים שלנו</a>
+            </div>
+            <div class="hero-trust">
+                <div class="trust-item">
+                    <span class="trust-number">500+</span>
+                    <span class="trust-label">ספרים</span>
+                </div>
+                <div class="trust-divider"></div>
+                <div class="trust-item">
+                    <span class="trust-number">15+</span>
+                    <span class="trust-label">שנות ניסיון</span>
+                </div>
+                <div class="trust-divider"></div>
+                <div class="trust-item">
+                    <span class="trust-number">200+</span>
+                    <span class="trust-label">לקוחות מרוצים</span>
+                </div>
+            </div>
         </div>
+        <div class="hero-visual">
+            <div class="book-stack">
+                <div class="book-item book-1"></div>
+                <div class="book-item book-2"></div>
+                <div class="book-item book-3"></div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-scroll-indicator">
+        <span>גלול למטה</span>
+        <div class="scroll-arrow"></div>
     </div>
 </section>
 
@@ -51,24 +86,66 @@
     <div class="container">
         <div class="section-header">
             <span class="section-tag">מי אנחנו</span>
-            <h2>מקרא בוקס – הוצאה לאור שמבינה מוסדות</h2>
+            <h2>מקרא הוצאה לאור</h2>
+            <p class="section-desc">מלווים מחברים מהרעיון הראשון ועד הספר המוגמר על המדף</p>
         </div>
-        <div class="about-grid">
-            <div class="about-text">
-                <p class="lead">אנחנו מלווים מוסדות, ארגונים ועמותות בתהליך הוצאה לאור מקצועי ומותאם אישית – מהרעיון הגולמי ועד הספר המודפס.</p>
-                <p>עם ניסיון עשיר בעולם ההוצאה לאור וההדפסה, אנחנו מציעים מענה כולל: עריכת תוכן ולשון, עיצוב גרפי, עימוד, הדפסה איכותית והפצה. כל פרויקט מקבל אצלנו ליווי אישי וצמוד.</p>
-                <p>אנחנו מאמינים שלכל מוסד יש סיפור שראוי לספר – ואנחנו כאן כדי לעזור לכם לספר אותו בצורה הטובה ביותר.</p>
+        <div class="about-layout">
+            <div class="about-main">
+                <div class="about-card about-story">
+                    <h3>הסיפור שלנו</h3>
+                    <p>מקרא הוצאה לאור הוקמה מתוך אהבה עמוקה לעולם הספר התורני והיהודי. אנחנו מאמינים שלכל מחבר מגיע ליווי מקצועי, אישי וצמוד – מהרגע שהוא מחליט להוציא ספר ועד שהוא מחזיק את התוצאה הסופית בידיים.</p>
+                    <p>עם צוות מקצועי של עורכים, מעצבים, מגיהים ואנשי דפוס – אנחנו מציעים מענה כולל ומלא לכל שלב בתהליך ההוצאה לאור.</p>
+                </div>
+                <div class="about-values-grid">
+                    <div class="about-value">
+                        <div class="value-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <h4>מקצועיות</h4>
+                        <p>צוות מומחים בכל תחום – עריכה, עיצוב, הגהה ודפוס</p>
+                    </div>
+                    <div class="about-value">
+                        <div class="value-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </div>
+                        <h4>ליווי אישי</h4>
+                        <p>כל מחבר מקבל תשומת לב מלאה ומענה מהיר</p>
+                    </div>
+                    <div class="about-value">
+                        <div class="value-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        </div>
+                        <h4>מהירות</h4>
+                        <p>מוציאים לאור במהירות האור – בלי לפגוע באיכות</p>
+                    </div>
+                    <div class="about-value">
+                        <div class="value-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </div>
+                        <h4>איכות</h4>
+                        <p>תוצאה סופית מושלמת שאתה יכול להתגאות בה</p>
+                    </div>
+                </div>
             </div>
-            <div class="about-stats">
-                <div class="stat-card">
+            <div class="about-sidebar">
+                <div class="stat-card-modern">
+                    <div class="stat-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                    </div>
                     <span class="stat-number">500+</span>
                     <span class="stat-label">ספרים שיצאו לאור</span>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card-modern">
+                    <div class="stat-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
                     <span class="stat-number">200+</span>
-                    <span class="stat-label">מוסדות וארגונים</span>
+                    <span class="stat-label">מחברים ולקוחות</span>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card-modern">
+                    <div class="stat-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
                     <span class="stat-number">15+</span>
                     <span class="stat-label">שנות ניסיון</span>
                 </div>
@@ -77,38 +154,8 @@
     </div>
 </section>
 
-<!-- Partnership -->
-<section class="section section-dark" id="partnership">
-    <div class="container">
-        <div class="partnership-content">
-            <div class="partnership-badge">שיתוף פעולה</div>
-            <div class="partnership-grid">
-                <div class="partnership-text">
-                    <h2>מקרא בוקס <span class="ampersand">&</span> יפה נוף</h2>
-                    <h3 class="partnership-subtitle">מקרא ראשי – פרויקט דגל</h3>
-                    <p>אנחנו גאים לשתף פעולה עם <strong>יפה נוף</strong> בפרויקט <strong>מקרא ראשי</strong> – יוזמה ייחודית להנגשת טקסטים מקראיים בפורמט מודרני ונגיש למוסדות חינוך וקהילה.</p>
-                    <p>שיתוף הפעולה מאפשר לנו לשלב את הניסיון שלנו בהוצאה לאור עם החזון החינוכי של יפה נוף – ליצור חומרי לימוד והעשרה ברמה הגבוהה ביותר.</p>
-                    <ul class="partnership-features">
-                        <li>עיצוב מותאם למוסדות חינוך</li>
-                        <li>תוכן מקראי נגיש ומעוצב</li>
-                        <li>מחירים מיוחדים למוסדות</li>
-                        <li>ליווי פדגוגי מקצועי</li>
-                    </ul>
-                </div>
-                <div class="partnership-visual">
-                    <div class="partner-card">
-                        <div class="partner-icon">📖</div>
-                        <h4>מקרא ראשי</h4>
-                        <p>טקסטים מקראיים בעיצוב מודרני ונגיש – להוראה, ללימוד ולהעשרה</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- Services -->
-<section class="section" id="services">
+<section class="section section-light" id="services">
     <div class="container">
         <div class="section-header">
             <span class="section-tag">השירותים שלנו</span>
@@ -117,135 +164,412 @@
         </div>
         <div class="services-grid">
             <div class="service-card">
-                <div class="service-icon">
-                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8 8h24v32H8z" stroke="currentColor" stroke-width="2.5"/>
-                        <path d="M14 16h12M14 22h12M14 28h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M36 12l4 4-12 12-4 1 1-4 12-12z" stroke="currentColor" stroke-width="2" fill="none"/>
+                <div class="service-number">01</div>
+                <div class="service-icon-modern">
+                    <svg viewBox="0 0 48 48" fill="none">
+                        <path d="M8 8h24v32H8z" stroke="currentColor" stroke-width="2"/>
+                        <path d="M14 16h12M14 22h12M14 28h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M36 12l4 4-12 12-4 1 1-4 12-12z" stroke="currentColor" stroke-width="1.5"/>
                     </svg>
                 </div>
-                <h3>עריכה</h3>
-                <p>עריכת תוכן, עריכה לשונית וסגנונית. הטקסט שלכם בגרסה המדויקת והמלוטשת ביותר.</p>
-                <ul class="service-features">
-                    <li>עריכת תוכן מקצועית</li>
-                    <li>עריכה לשונית וסגנונית</li>
-                    <li>הגהה סופית</li>
+                <h3>עימוד מקצועי</h3>
+                <p>עימוד מדויק ואסתטי שמכבד את התוכן ומעניק לספר מראה מקצועי ונקי. התאמה מלאה לסגנון הספר.</p>
+                <ul class="service-list">
+                    <li>עימוד ספרי קודש</li>
+                    <li>עימוד ספרות כללית</li>
+                    <li>עימוד דו-לשוני</li>
                 </ul>
             </div>
             <div class="service-card">
-                <div class="service-icon">
-                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="6" y="6" width="36" height="36" rx="4" stroke="currentColor" stroke-width="2.5"/>
-                        <circle cx="18" cy="20" r="5" stroke="currentColor" stroke-width="2"/>
-                        <path d="M6 32l10-8 8 6 8-10 10 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <div class="service-number">02</div>
+                <div class="service-icon-modern">
+                    <svg viewBox="0 0 48 48" fill="none">
+                        <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="2"/>
+                        <path d="M18 24l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </div>
-                <h3>עיצוב גרפי</h3>
-                <p>עיצוב כריכה, עימוד פנימי ואיורים. הספר שלכם ייראה מקצועי ומזמין.</p>
-                <ul class="service-features">
-                    <li>עיצוב כריכות</li>
-                    <li>עימוד ולייאאוט</li>
-                    <li>איורים וגרפיקה</li>
+                <h3>הגהה לשונית</h3>
+                <p>הגהה מדוקדקת ברמה הגבוהה ביותר. תיקון שגיאות כתיב, תחביר, ניקוד ופיסוק – עד לתוצאה מושלמת.</p>
+                <ul class="service-list">
+                    <li>הגהה לשונית</li>
+                    <li>הגהת ניקוד</li>
+                    <li>עריכה סגנונית</li>
                 </ul>
             </div>
             <div class="service-card">
-                <div class="service-icon">
-                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="8" y="12" width="32" height="24" rx="2" stroke="currentColor" stroke-width="2.5"/>
-                        <path d="M8 20h32" stroke="currentColor" stroke-width="2"/>
-                        <path d="M16 12V8M32 12V8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-                        <path d="M12 28h8M12 32h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <div class="service-number">03</div>
+                <div class="service-icon-modern">
+                    <svg viewBox="0 0 48 48" fill="none">
+                        <rect x="6" y="6" width="36" height="36" rx="4" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="18" cy="20" r="5" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M6 34l10-8 8 6 8-10 10 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                     </svg>
                 </div>
-                <h3>הדפסה</h3>
-                <p>הדפסה באיכות גבוהה, בכמויות גמישות – מעשרות עותקים ועד אלפים.</p>
-                <ul class="service-features">
+                <h3>עיצוב כריכות ושערים</h3>
+                <p>כריכות מרהיבות שמושכות את העין ומשקפות את תוכן הספר. עיצוב שער פנימי, עמודי פתיחה ועוד.</p>
+                <ul class="service-list">
+                    <li>כריכה קדמית ואחורית</li>
+                    <li>שדרה ושער פנימי</li>
+                    <li>עיצוב גרפי מלא</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-number">04</div>
+                <div class="service-icon-modern">
+                    <svg viewBox="0 0 48 48" fill="none">
+                        <rect x="8" y="14" width="32" height="22" rx="2" stroke="currentColor" stroke-width="2"/>
+                        <path d="M14 14V10a2 2 0 012-2h16a2 2 0 012 2v4" stroke="currentColor" stroke-width="2"/>
+                        <path d="M8 22h32" stroke="currentColor" stroke-width="1.5"/>
+                        <rect x="20" y="19" width="8" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                </div>
+                <h3>הדפסה והוצאה לאור</h3>
+                <p>הדפסה באיכות פרימיום, בכמויות גמישות – מעשרות עותקים ועד אלפים. דפוס דיגיטלי ואופסט.</p>
+                <ul class="service-list">
                     <li>הדפסה דיגיטלית ואופסט</li>
-                    <li>כמויות גמישות</li>
-                    <li>חומרים ומשטחים מגוונים</li>
+                    <li>כריכה רכה וקשה</li>
+                    <li>ISBN והפצה</li>
                 </ul>
             </div>
-            <div class="service-card">
-                <div class="service-icon">
-                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M24 6l18 10v16L24 42 6 32V16L24 6z" stroke="currentColor" stroke-width="2.5"/>
-                        <path d="M24 22v20M6 16l18 6 18-6" stroke="currentColor" stroke-width="2"/>
-                        <circle cx="24" cy="18" r="4" stroke="currentColor" stroke-width="2"/>
-                    </svg>
+        </div>
+    </div>
+</section>
+
+<!-- Books Gallery -->
+<section class="section" id="books">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">הספרים שראו אור</span>
+            <h2>גאים בכל ספר</h2>
+            <p class="section-desc">מבחר מהספרים שיצאו לאור בהוצאת מקרא</p>
+        </div>
+        <div class="books-filter">
+            <button class="filter-btn active" data-filter="all">הכל</button>
+            <button class="filter-btn" data-filter="torah">תורני</button>
+            <button class="filter-btn" data-filter="thought">מחשבה</button>
+            <button class="filter-btn" data-filter="halacha">הלכה</button>
+            <button class="filter-btn" data-filter="history">היסטוריה</button>
+        </div>
+        <div class="books-grid">
+            <div class="book-card" data-category="torah">
+                <div class="book-cover" style="background: linear-gradient(135deg, #1a3a5c 0%, #2a5a8c 100%);">
+                    <div class="book-cover-content">
+                        <span class="book-cover-author">הרב אהרן ביין</span>
+                        <span class="book-cover-title">טמונה בפרשה</span>
+                        <span class="book-cover-ornament">&#10022;</span>
+                    </div>
                 </div>
-                <h3>הוצאה לאור עצמאית</h3>
-                <p>ליווי מלא בתהליך הוצאה לאור עצמאית – מהכנת כתב היד ועד ההפצה.</p>
-                <ul class="service-features">
-                    <li>ייעוץ והכוונה</li>
-                    <li>ISBN ורישום ספריות</li>
-                    <li>הפצה ושיווק</li>
-                </ul>
+                <div class="book-info">
+                    <span class="book-category-tag">תורני</span>
+                    <h3>טמונה בפרשה</h3>
+                    <p class="book-author">הרב אהרן ביין</p>
+                    <p class="book-desc">חידושים ופנינים על פרשיות השבוע, מלוקטים ומעובדים בסגנון בהיר ומרתק</p>
+                    <div class="book-price">
+                        <span class="price-current">₪80</span>
+                        <span class="price-original">₪100</span>
+                    </div>
+                </div>
             </div>
+            <div class="book-card" data-category="thought">
+                <div class="book-cover" style="background: linear-gradient(135deg, #5c2a1a 0%, #8c4a2a 100%);">
+                    <div class="book-cover-content">
+                        <span class="book-cover-author">אבי גרינצויג</span>
+                        <span class="book-cover-title">ממשלה, עם, אדם</span>
+                        <span class="book-cover-ornament">&#10022;</span>
+                    </div>
+                </div>
+                <div class="book-info">
+                    <span class="book-category-tag">מחשבה</span>
+                    <h3>ממשלה, עם, אדם</h3>
+                    <p class="book-author">אבי גרינצויג</p>
+                    <p class="book-desc">עיון מעמיק ביחסי הפרט והכלל, שלטון וחברה – מפרספקטיבה יהודית ואוניברסלית</p>
+                    <div class="book-price">
+                        <span class="price-current">₪69</span>
+                        <span class="price-original">₪89</span>
+                    </div>
+                </div>
+            </div>
+            <div class="book-card" data-category="torah">
+                <div class="book-cover" style="background: linear-gradient(135deg, #2a4a2a 0%, #4a7a4a 100%);">
+                    <div class="book-cover-content">
+                        <span class="book-cover-author">הרב משה דוד ולנר</span>
+                        <span class="book-cover-title">ארץ חמדה</span>
+                        <span class="book-cover-ornament">&#10022;</span>
+                    </div>
+                </div>
+                <div class="book-info">
+                    <span class="book-category-tag">תורני</span>
+                    <h3>ארץ חמדה</h3>
+                    <p class="book-author">הרב משה דוד ולנר</p>
+                    <p class="book-desc">סט 3 כרכים – יצירת מופת תלמודית עם ביאורים מעמיקים וחידושים מאירי עיניים</p>
+                    <div class="book-price">
+                        <span class="price-current">₪180</span>
+                    </div>
+                </div>
+            </div>
+            <div class="book-card" data-category="halacha">
+                <div class="book-cover" style="background: linear-gradient(135deg, #3a2a5c 0%, #5a4a8c 100%);">
+                    <div class="book-cover-content">
+                        <span class="book-cover-author">הרב יצחק שלמה זילברמן</span>
+                        <span class="book-cover-title">נתיבות ההלכה</span>
+                        <span class="book-cover-ornament">&#10022;</span>
+                    </div>
+                </div>
+                <div class="book-info">
+                    <span class="book-category-tag">הלכה</span>
+                    <h3>נתיבות ההלכה</h3>
+                    <p class="book-author">הרב יצחק שלמה זילברמן</p>
+                    <p class="book-desc">ליקוט הלכות מעשיות בסדר נושאי, בשפה ברורה ונגישה לכל</p>
+                    <div class="book-price">
+                        <span class="price-current">₪75</span>
+                    </div>
+                </div>
+            </div>
+            <div class="book-card" data-category="history">
+                <div class="book-cover" style="background: linear-gradient(135deg, #5c4a1a 0%, #8c7a3a 100%);">
+                    <div class="book-cover-content">
+                        <span class="book-cover-author">ד"ר נחום רוזנברג</span>
+                        <span class="book-cover-title">קהילות ישראל באירופה</span>
+                        <span class="book-cover-ornament">&#10022;</span>
+                    </div>
+                </div>
+                <div class="book-info">
+                    <span class="book-category-tag">היסטוריה</span>
+                    <h3>קהילות ישראל באירופה</h3>
+                    <p class="book-author">ד"ר נחום רוזנברג</p>
+                    <p class="book-desc">מסע מרתק בעקבות הקהילות היהודיות הגדולות באירופה – מראשיתן ועד חורבנן</p>
+                    <div class="book-price">
+                        <span class="price-current">₪95</span>
+                    </div>
+                </div>
+            </div>
+            <div class="book-card" data-category="thought">
+                <div class="book-cover" style="background: linear-gradient(135deg, #1a4a5c 0%, #2a7a8c 100%);">
+                    <div class="book-cover-content">
+                        <span class="book-cover-author">הרב דוד כהן</span>
+                        <span class="book-cover-title">אור החיים</span>
+                        <span class="book-cover-ornament">&#10022;</span>
+                    </div>
+                </div>
+                <div class="book-info">
+                    <span class="book-category-tag">מחשבה</span>
+                    <h3>אור החיים</h3>
+                    <p class="book-author">הרב דוד כהן</p>
+                    <p class="book-desc">שיחות ומאמרים על אמונה, תפילה ועבודת ה' – מתוך עומק המחשבה היהודית</p>
+                    <div class="book-price">
+                        <span class="price-current">₪65</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="books-cta">
+            <a href="#contact" class="btn btn-primary">גם אתה רוצה להוציא ספר? דבר איתנו</a>
         </div>
     </div>
 </section>
 
 <!-- Process -->
-<section class="section section-light" id="process">
+<section class="section section-dark" id="process">
     <div class="container">
         <div class="section-header">
             <span class="section-tag">איך זה עובד</span>
-            <h2>ארבעה שלבים לספר מושלם</h2>
+            <h2>מהרעיון לספר מוגמר</h2>
+            <p class="section-desc">תהליך פשוט וברור ב-4 שלבים</p>
         </div>
-        <div class="process-grid">
+        <div class="process-timeline">
+            <div class="process-line"></div>
             <div class="process-step">
-                <div class="step-number">01</div>
-                <h3>פגישת היכרות</h3>
-                <p>נשמע על הפרויקט, נבין את הצרכים ונתאים תוכנית עבודה מדויקת.</p>
+                <div class="step-marker">
+                    <span>1</span>
+                </div>
+                <div class="step-content">
+                    <h3>פנייה ראשונית</h3>
+                    <p>אתה פונה אלינו עם הרעיון או כתב היד. אנחנו מקשיבים, מבינים את הצרכים ומתאימים תוכנית עבודה ומחיר.</p>
+                </div>
             </div>
             <div class="process-step">
-                <div class="step-number">02</div>
-                <h3>עריכה ועיצוב</h3>
-                <p>צוות העורכים והמעצבים שלנו עובד על התוכן – עם עדכונים שוטפים לכם.</p>
+                <div class="step-marker">
+                    <span>2</span>
+                </div>
+                <div class="step-content">
+                    <h3>עריכה והגהה</h3>
+                    <p>הצוות המקצועי שלנו עורך את הטקסט, מגיה, מתקן ומלטש – עד שהתוכן מושלם ומוכן לעימוד.</p>
+                </div>
             </div>
             <div class="process-step">
-                <div class="step-number">03</div>
-                <h3>אישור והדפסה</h3>
-                <p>אתם מאשרים את הגרסה הסופית ואנחנו שולחים להדפסה באיכות הגבוהה ביותר.</p>
+                <div class="step-marker">
+                    <span>3</span>
+                </div>
+                <div class="step-content">
+                    <h3>עיצוב ועימוד</h3>
+                    <p>מעצבים כריכה מרהיבה, מעמדים את הספר בלייאאוט מקצועי ויוצרים מוצר מוגמר שנראה מיליון דולר.</p>
+                </div>
             </div>
             <div class="process-step">
-                <div class="step-number">04</div>
-                <h3>אספקה והפצה</h3>
-                <p>הספר מגיע אליכם – מוכן ומושלם. אנחנו גם עוזרים עם הפצה ושיווק.</p>
+                <div class="step-marker">
+                    <span>4</span>
+                </div>
+                <div class="step-content">
+                    <h3>הדפסה והפצה</h3>
+                    <p>אחרי אישור סופי – שולחים לדפוס. תוך זמן קצר הספר מוכן, מודפס ומופץ. מזל טוב!</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- CTA -->
+<!-- Customization -->
+<section class="section" id="custom">
+    <div class="container">
+        <div class="custom-layout">
+            <div class="custom-text">
+                <span class="section-tag">התאמה אישית</span>
+                <h2>כל ספר הוא ייחודי – וכך גם השירות שלנו</h2>
+                <p>אנחנו לא מאמינים בפתרון אחד שמתאים לכולם. כל פרויקט מקבל התאמה מלאה – מהעיצוב, דרך סוג הנייר והכריכה, ועד אופן ההפצה.</p>
+                <div class="custom-features">
+                    <div class="custom-feature">
+                        <div class="feature-check">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        </div>
+                        <div>
+                            <h4>בחירת חומרים</h4>
+                            <p>נייר, כריכה, למינציה – הכל לפי הטעם והתקציב שלך</p>
+                        </div>
+                    </div>
+                    <div class="custom-feature">
+                        <div class="feature-check">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        </div>
+                        <div>
+                            <h4>גדלים וכמויות</h4>
+                            <p>מ-50 עותקים ועד 10,000 – בגודל שמתאים לך</p>
+                        </div>
+                    </div>
+                    <div class="custom-feature">
+                        <div class="feature-check">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        </div>
+                        <div>
+                            <h4>זמני אספקה גמישים</h4>
+                            <p>מסלול רגיל או מסלול מהיר – אתה בוחר</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="custom-visual">
+                <div class="custom-card">
+                    <div class="custom-card-icon">
+                        <svg viewBox="0 0 64 64" fill="none">
+                            <rect x="12" y="8" width="40" height="48" rx="4" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 8c0-2.2 1.8-4 4-4h32a4 4 0 014 4" stroke="currentColor" stroke-width="2"/>
+                            <rect x="20" y="18" width="24" height="4" rx="1" fill="currentColor" opacity="0.2"/>
+                            <rect x="20" y="26" width="20" height="3" rx="1" fill="currentColor" opacity="0.15"/>
+                            <rect x="20" y="33" width="24" height="3" rx="1" fill="currentColor" opacity="0.1"/>
+                            <rect x="20" y="40" width="16" height="3" rx="1" fill="currentColor" opacity="0.08"/>
+                        </svg>
+                    </div>
+                    <h4>קבל הצעת מחיר מותאמת</h4>
+                    <p>ספר לנו על הפרויקט שלך ונחזור עם הצעה מדויקת תוך 24 שעות</p>
+                    <a href="#contact" class="btn btn-primary">להצעת מחיר</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Blog -->
+<section class="section section-light" id="blog">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">חדש במקרא</span>
+            <h2>מהבלוג שלנו</h2>
+            <p class="section-desc">חדשות, עדכונים וטיפים מעולם ההוצאה לאור</p>
+        </div>
+        <div class="blog-grid">
+            <div class="blog-card blog-card-featured">
+                <div class="blog-image" style="background: linear-gradient(135deg, #1a3a5c 0%, #c8913a 100%);"></div>
+                <div class="blog-content">
+                    <span class="blog-date">ינואר 2025</span>
+                    <h3>סט ספרי "ארץ חמדה" רואה אור – יצירת מופת תלמודית ב-3 כרכים</h3>
+                    <p>אנחנו שמחים לבשר על יציאת סט הספרים "ארץ חמדה" – פרי עמל של שנים, שלושה כרכים מרהיבים שנערכו ועוצבו בהוצאת מקרא.</p>
+                    <a href="#" class="blog-link">קרא עוד</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-image" style="background: linear-gradient(135deg, #2a4a2a 0%, #8c7a3a 100%);"></div>
+                <div class="blog-content">
+                    <span class="blog-date">נובמבר 2024</span>
+                    <h3>5 טיפים למחבר שרוצה להוציא ספר לראשונה</h3>
+                    <p>חולמים להוציא ספר אבל לא יודעים מאיפה מתחילים? הנה 5 דברים שכדאי לדעת לפני שנכנסים לתהליך.</p>
+                    <a href="#" class="blog-link">קרא עוד</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-image" style="background: linear-gradient(135deg, #5c2a1a 0%, #3a2a5c 100%);"></div>
+                <div class="blog-content">
+                    <span class="blog-date">אוקטובר 2024</span>
+                    <h3>כריכה קשה או רכה? מדריך מהיר לבחירה נכונה</h3>
+                    <p>לסוג הכריכה יש השפעה על המחיר, על התחושה ועל איך שהספר נתפס. הנה מה שצריך לדעת.</p>
+                    <a href="#" class="blog-link">קרא עוד</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact / CTA -->
 <section class="section section-cta" id="contact">
     <div class="container">
-        <div class="cta-content">
-            <h2>יש לכם פרויקט בראש?</h2>
-            <p>השאירו פרטים ונחזור אליכם תוך 24 שעות עם הצעה מותאמת אישית</p>
-            <form class="contact-form" id="contactForm" name="contactForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <input type="text" name="name" placeholder="שם מלא" required>
+        <div class="contact-layout">
+            <div class="contact-text">
+                <h2>בוא נוציא את הספר שלך לאור</h2>
+                <p>השאר פרטים ונחזור אליך תוך 24 שעות עם הצעה מותאמת אישית. בלי התחייבות.</p>
+                <div class="contact-info-items">
+                    <div class="contact-info-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                        <span>052-123-4567</span>
                     </div>
-                    <div class="form-group">
-                        <input type="text" name="organization" placeholder="שם המוסד / הארגון">
+                    <div class="contact-info-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <span>info@mikrabooks.co.il</span>
                     </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <input type="tel" name="phone" placeholder="טלפון" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="דוא״ל" required>
+                    <div class="contact-info-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>ישראל</span>
                     </div>
                 </div>
-                <div class="form-group full-width">
-                    <textarea name="message" rows="4" placeholder="ספרו לנו בקצרה על הפרויקט שלכם..."></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary btn-large" id="submitBtn">שלחו לנו</button>
-                <div id="message"></div>
-            </form>
+            </div>
+            <div class="contact-form-wrap">
+                <form class="contact-form" id="contactForm" name="contactForm">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="שם מלא *" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="טלפון *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="דוא״ל *" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <select name="service">
+                            <option value="">סוג השירות המבוקש</option>
+                            <option value="full">הוצאה לאור מלאה</option>
+                            <option value="editing">עריכה והגהה</option>
+                            <option value="design">עיצוב ועימוד</option>
+                            <option value="print">הדפסה בלבד</option>
+                            <option value="other">אחר</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" rows="4" placeholder="ספר לנו בקצרה על הפרויקט שלך..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large btn-full" id="submitBtn">שלח פנייה</button>
+                    <p class="form-note">* נחזור אליך תוך 24 שעות</p>
+                    <div id="message"></div>
+                </form>
+            </div>
         </div>
     </div>
 </section>
@@ -255,31 +579,35 @@
     <div class="container">
         <div class="footer-grid">
             <div class="footer-brand">
-                <span class="logo-main">מקרא בוקס</span>
-                <p>הוצאה לאור מקצועית למוסדות וארגונים</p>
+                <span class="footer-logo">מקרא</span>
+                <span class="footer-logo-sub">הוצאה לאור</span>
+                <p>נכנסת למקרא, יצאת לאור.<br>הוצאה לאור מקצועית לספרים תורניים ויהודיים.</p>
             </div>
             <div class="footer-links">
-                <h4>ניווט מהיר</h4>
+                <h4>ניווט</h4>
                 <a href="#about">אודות</a>
-                <a href="#partnership">שיתוף פעולה</a>
                 <a href="#services">שירותים</a>
-                <a href="#contact">צרו קשר</a>
+                <a href="#books">הספרים שראו אור</a>
+                <a href="#process">תהליך העבודה</a>
+                <a href="#blog">חדש במקרא</a>
             </div>
             <div class="footer-links">
                 <h4>שירותים</h4>
-                <a href="#services">עריכה</a>
-                <a href="#services">עיצוב גרפי</a>
-                <a href="#services">הדפסה</a>
-                <a href="#services">הוצאה לאור עצמאית</a>
+                <a href="#services">עימוד מקצועי</a>
+                <a href="#services">הגהה לשונית</a>
+                <a href="#services">עיצוב כריכות</a>
+                <a href="#services">הדפסה והוצאה לאור</a>
+                <a href="#custom">התאמה אישית</a>
             </div>
             <div class="footer-contact">
-                <h4>צרו קשר</h4>
+                <h4>צור קשר</h4>
                 <p>info@mikrabooks.co.il</p>
+                <p>052-123-4567</p>
                 <p>ישראל</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 מקרא בוקס. כל הזכויות שמורות.</p>
+            <p>&copy; 2026 מקרא הוצאה לאור. כל הזכויות שמורות.</p>
         </div>
     </div>
 </footer>
@@ -318,6 +646,26 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Books filter
+const filterBtns = document.querySelectorAll('.filter-btn');
+const bookCards = document.querySelectorAll('.book-card');
+
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        bookCards.forEach(card => {
+            if (filter === 'all' || card.dataset.category === filter) {
+                card.style.display = '';
+                card.style.animation = 'fadeInUp 0.4s ease forwards';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+});
+
 // Form submission
 const scriptURL = 'https://script.google.com/macros/s/AKfycbx7NrrOlNeEa94JPWgPb25wVa-YdLAgLflftVNnZz__ZbDRbLFFy3J4Pb2HaGvfsfL39g/exec';
 const form = document.getElementById('contactForm');
@@ -338,17 +686,17 @@ form.addEventListener('submit', e => {
         body: JSON.stringify(data)
     })
     .then(() => {
-        msg.innerHTML = '<div class="alert alert-success">הפרטים נשלחו בהצלחה! ניצור אתכם קשר בהקדם.</div>';
+        msg.innerHTML = '<div class="alert alert-success">הפרטים נשלחו בהצלחה! ניצור איתך קשר בהקדם.</div>';
         form.reset();
         btn.disabled = false;
-        btn.innerText = "שלחו לנו";
+        btn.innerText = "שלח פנייה";
         setTimeout(() => { msg.innerHTML = ''; }, 5000);
     })
     .catch(error => {
-        msg.innerHTML = '<div class="alert alert-error">שגיאה בשליחה, אנא נסו שנית.</div>';
+        msg.innerHTML = '<div class="alert alert-error">שגיאה בשליחה, אנא נסה שנית.</div>';
         console.error('Error:', error.message);
         btn.disabled = false;
-        btn.innerText = "שלחו לנו";
+        btn.innerText = "שלח פנייה";
     });
 });
 
@@ -362,7 +710,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-document.querySelectorAll('.service-card, .process-step, .stat-card, .about-text, .partnership-text, .partnership-visual').forEach(el => {
+document.querySelectorAll('.service-card, .process-step, .stat-card-modern, .about-value, .book-card, .blog-card, .custom-feature, .about-story').forEach(el => {
     el.classList.add('animate-in');
     observer.observe(el);
 });
