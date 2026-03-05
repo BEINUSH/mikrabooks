@@ -730,122 +730,121 @@ img { max-width: 100%; }
     border-radius: 50%;
 }
 
-/* ===== Books Gallery ===== */
-.books-showcase {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+/* ===== Books Catalog ===== */
+.catalog-search-wrap {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto 32px;
 }
 
-.book-showcase-item {
-    text-align: center;
+.catalog-search {
+    width: 100%;
+    padding: 14px 20px;
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 1rem;
+    font-family: 'Heebo', sans-serif;
+    background: #fff;
+    color: var(--text);
     transition: var(--transition);
+    text-align: right;
 }
 
-.book-showcase-item:hover {
-    transform: translateY(-8px);
+.catalog-search:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(200,145,58,0.1);
 }
 
-.book-3d {
-    perspective: 800px;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
+.catalog-search::placeholder {
+    color: var(--text-muted);
 }
 
-.book-3d-cover {
-    width: 180px;
-    height: 260px;
-    border-radius: 4px 12px 12px 4px;
-    position: relative;
-    transform: rotateY(-15deg);
-    transition: var(--transition-slow);
-    box-shadow:
-        8px 8px 30px rgba(0,0,0,0.3),
-        inset -2px 0 4px rgba(255,255,255,0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.book-showcase-item:hover .book-3d-cover {
-    transform: rotateY(-5deg) scale(1.03);
-    box-shadow:
-        12px 12px 40px rgba(0,0,0,0.35),
-        inset -2px 0 4px rgba(255,255,255,0.1);
-}
-
-.book-3d-content {
+.catalog-count {
+    display: block;
     text-align: center;
-    padding: 20px;
-    position: relative;
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.catalog-table-wrap {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: #fff;
+    box-shadow: var(--shadow-sm);
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.catalog-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+}
+
+.catalog-table thead {
+    position: sticky;
+    top: 0;
     z-index: 2;
 }
 
-.book-3d-author {
-    display: block;
-    color: rgba(255,255,255,0.6);
-    font-size: 0.75rem;
-    margin-bottom: 12px;
-    letter-spacing: 0.5px;
-}
-
-.book-3d-title {
-    display: block;
-    font-family: 'Frank Ruhl Libre', serif;
-    font-size: 1.5rem;
-    font-weight: 700;
+.catalog-table th {
+    background: var(--primary);
     color: #fff;
-    line-height: 1.3;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    padding: 14px 16px;
+    text-align: right;
+    font-weight: 600;
+    font-size: 0.9rem;
+    white-space: nowrap;
 }
 
-.book-3d-ornament {
-    display: block;
-    color: rgba(255,255,255,0.25);
-    font-size: 1rem;
-    margin-top: 16px;
+.catalog-table th:first-child {
+    width: 50px;
+    text-align: center;
 }
 
-.book-3d-spine {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 4px;
-    background: rgba(0,0,0,0.2);
-    border-radius: 0 2px 2px 0;
+.catalog-table td {
+    padding: 11px 16px;
+    border-bottom: 1px solid var(--border-light);
+    color: var(--text);
 }
 
-.book-showcase-info {
-    padding: 0 8px;
+.catalog-table td:first-child {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.82rem;
 }
 
-.book-category-tag {
-    display: inline-block;
-    background: rgba(200,145,58,0.1);
-    color: var(--accent);
-    padding: 3px 12px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 500;
-    margin-bottom: 8px;
+.catalog-table tbody tr {
+    transition: background 0.15s ease;
 }
 
-.book-category-tag-accent {
-    background: var(--accent);
-    color: #fff;
+.catalog-table tbody tr:hover {
+    background: rgba(200,145,58,0.05);
 }
 
-.book-showcase-info h3 {
-    font-size: 1.05rem;
+.catalog-table tbody tr:nth-child(even) {
+    background: var(--bg-warm);
+}
+
+.catalog-table tbody tr:nth-child(even):hover {
+    background: rgba(200,145,58,0.08);
+}
+
+.catalog-table td.book-name {
+    font-weight: 600;
     color: var(--primary);
-    margin-bottom: 4px;
+    font-family: 'Frank Ruhl Libre', 'Heebo', serif;
+    font-size: 0.95rem;
 }
 
-.book-showcase-info p {
-    font-size: 0.88rem;
-    color: var(--text-light);
+.catalog-no-results {
+    text-align: center;
+    padding: 48px 20px;
+    color: var(--text-muted);
+    font-size: 1rem;
 }
 
 .books-cta {
@@ -1430,11 +1429,6 @@ a.contact-info-item:hover {
 .service-card.animate-in:nth-child(3) { transition-delay: 0.2s; }
 .service-card.animate-in:nth-child(4) { transition-delay: 0.3s; }
 
-.book-showcase-item.animate-in:nth-child(2) { transition-delay: 0.08s; }
-.book-showcase-item.animate-in:nth-child(3) { transition-delay: 0.16s; }
-.book-showcase-item.animate-in:nth-child(4) { transition-delay: 0.24s; }
-.book-showcase-item.animate-in:nth-child(5) { transition-delay: 0.32s; }
-.book-showcase-item.animate-in:nth-child(6) { transition-delay: 0.4s; }
 
 .testimonial-card.animate-in:nth-child(2) { transition-delay: 0.1s; }
 .testimonial-card.animate-in:nth-child(3) { transition-delay: 0.2s; }
@@ -1486,9 +1480,9 @@ a.contact-info-item:hover {
         grid-template-columns: 180px 1fr;
     }
 
-    .books-showcase {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
+    .catalog-table th:nth-child(4),
+    .catalog-table td:nth-child(4) {
+        display: table-cell;
     }
 
     .custom-layout {
@@ -1578,18 +1572,13 @@ a.contact-info-item:hover {
         min-height: 180px;
     }
 
-    .books-showcase {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+    .catalog-table th:nth-child(4),
+    .catalog-table td:nth-child(4) {
+        display: none;
     }
 
-    .book-3d-cover {
-        width: 150px;
-        height: 220px;
-    }
-
-    .book-3d-title {
-        font-size: 1.2rem;
+    .catalog-table-wrap {
+        max-height: 500px;
     }
 
     .testimonials-grid {
@@ -1642,22 +1631,15 @@ a.contact-info-item:hover {
         height: 1px;
     }
 
-    .books-showcase {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
+    .catalog-table th,
+    .catalog-table td {
+        padding: 9px 10px;
+        font-size: 0.82rem;
     }
 
-    .book-3d-cover {
-        width: 130px;
-        height: 190px;
-    }
-
-    .book-3d-title {
-        font-size: 1rem;
-    }
-
-    .book-3d-author {
-        font-size: 0.65rem;
+    .catalog-table th:nth-child(3),
+    .catalog-table td:nth-child(3) {
+        display: none;
     }
 
     .contact-form-wrap {
