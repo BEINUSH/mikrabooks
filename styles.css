@@ -271,24 +271,102 @@ img { max-width: 100%; }
 }
 
 .hero-partnership {
-    background: rgba(200, 145, 58, 0.15);
-    border: 1px solid rgba(200, 145, 58, 0.3);
+    background: linear-gradient(135deg, rgba(200,145,58,0.18) 0%, rgba(26,47,74,0.6) 100%);
+    border: 1px solid rgba(200, 145, 58, 0.5);
     border-radius: var(--radius);
-    padding: 16px 20px;
+    padding: 20px 24px;
     margin-bottom: 28px;
-    max-width: 520px;
+    max-width: 560px;
+    box-shadow: 0 4px 24px rgba(200,145,58,0.15);
+    position: relative;
+    overflow: hidden;
 }
 
-.hero-partnership p {
-    color: rgba(255,255,255,0.85);
-    font-size: 0.95rem;
-    margin-bottom: 10px;
-    line-height: 1.6;
+.hero-partnership::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 4px; height: 100%;
+    background: linear-gradient(180deg, var(--accent) 0%, var(--accent-light) 100%);
+    border-radius: 0 var(--radius) var(--radius) 0;
 }
 
-.hero-partnership strong {
+.partnership-header {
+    margin-bottom: 14px;
+}
+
+.partnership-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: var(--accent-light);
-    font-weight: 600;
+    background: rgba(200,145,58,0.15);
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(200,145,58,0.35);
+}
+
+.partnership-body {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 14px;
+}
+
+.partnership-logo-wrap {
+    flex-shrink: 0;
+    background: rgba(255,255,255,0.95);
+    border-radius: 10px;
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 110px;
+    min-height: 54px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+}
+
+.partnership-logo {
+    max-height: 46px;
+    max-width: 110px;
+    object-fit: contain;
+    display: block;
+}
+
+.partnership-logo-fallback {
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.1;
+}
+
+.fallback-main {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1a2f4a;
+}
+
+.fallback-sub {
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: #c8913a;
+    letter-spacing: 0.05em;
+}
+
+.partnership-desc strong {
+    display: block;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+.partnership-desc p {
+    color: rgba(255,255,255,0.75);
+    font-size: 0.82rem;
+    margin: 0;
+    line-height: 1.4;
 }
 
 .partnership-perks {
@@ -300,10 +378,11 @@ img { max-width: 100%; }
 .partnership-perks span {
     background: rgba(200, 145, 58, 0.2);
     color: rgba(255,255,255,0.9);
-    padding: 4px 12px;
+    padding: 5px 14px;
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 500;
+    border: 1px solid rgba(200,145,58,0.25);
 }
 
 .hero-buttons {
