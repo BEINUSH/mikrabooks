@@ -57,8 +57,19 @@
 <nav class="navbar" id="navbar">
     <div class="container nav-container">
         <a href="#" class="logo">
-            <span class="logo-main">מקרא</span>
-            <span class="logo-sub">הוצאה לאור</span>
+            <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 52" aria-label="מקרא הוצאה לאור">
+                <!-- open book icon -->
+                <g transform="translate(4,2)">
+                    <path d="M24 6 L4 16 L24 20 L44 16 Z" fill="#c8913a"/>
+                    <path d="M24 4 L4 14 L24 17 L44 14 Z" fill="white" opacity="0.6"/>
+                    <path d="M24 2 L4 12 L24 15 L44 12 Z" fill="#1a6b7a"/>
+                    <path d="M24 0 L4 10 L24 13 L44 10 Z" fill="#1a6b7a" opacity="0.7"/>
+                </g>
+                <!-- מקרא text -->
+                <text x="80" y="36" text-anchor="middle" font-family="'Frank Ruhl Libre', serif" font-size="22" font-weight="700" fill="#1a6b7a" letter-spacing="1">מקרא</text>
+                <!-- הוצאה לאור text -->
+                <text x="80" y="50" text-anchor="middle" font-family="'Heebo', sans-serif" font-size="9" fill="#c8913a" letter-spacing="2">הוצאה לאור</text>
+            </svg>
         </a>
         <button class="nav-toggle" id="navToggle" aria-label="תפריט">
             <span></span><span></span><span></span>
@@ -91,14 +102,19 @@
                 </div>
                 <div class="partnership-body">
                     <div class="partnership-logo-wrap">
-                        <img src="https://yefe.co.il/wp-content/uploads/cropped-לוגו-יפה-נוף-לאתר-final-1.png"
-                             alt="יפה נוף פלדהיים"
-                             class="partnership-logo"
-                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                        <div class="partnership-logo-fallback" style="display:none">
-                            <span class="fallback-main">יפה נוף</span>
-                            <span class="fallback-sub">פלדהיים</span>
-                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 72" class="partnership-logo" aria-label="יפה נוף פלדהיים">
+                            <!-- book/candle icon -->
+                            <rect x="148" y="8" width="44" height="56" rx="5" fill="#2b8fd6"/>
+                            <line x1="170" y1="8" x2="170" y2="64" stroke="white" stroke-width="2.5"/>
+                            <line x1="148" y1="36" x2="192" y2="36" stroke="white" stroke-width="2.5"/>
+                            <ellipse cx="170" cy="34" rx="7" ry="9" fill="#6b7f99"/>
+                            <!-- רשת חנויות -->
+                            <text x="70" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#999" letter-spacing="1">רשת חנויות</text>
+                            <!-- יפה נוף -->
+                            <text x="70" y="46" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#2b8fd6">יפה נוף</text>
+                            <!-- פלדהיים -->
+                            <text x="70" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#2b8fd6">פלדהיים</text>
+                        </svg>
                     </div>
                     <div class="partnership-desc">
                         <strong>רשת 37 החנויות המובילה במגזר החרדי</strong>
