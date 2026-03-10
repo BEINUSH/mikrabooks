@@ -9,7 +9,42 @@
     <meta property="og:description" content="מוציאים לאור במהירות האור – עימוד מקצועי, הגהה לשונית, עיצוב כריכה, הדפסה והפצה.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://beinush.github.io/mikrabooks">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1200&q=80">
+    <meta property="og:locale" content="he_IL">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="מקרא הוצאה לאור | הוצאה לאור מקצועית">
+    <meta name="twitter:description" content="מוציאים לאור במהירות האור – עימוד מקצועי, הגהה לשונית, עיצוב כריכה, הדפסה והפצה.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1200&q=80">
     <link rel="canonical" href="https://beinush.github.io/mikrabooks">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "מקרא הוצאה לאור",
+      "description": "הוצאה לאור מקצועית לספרים תורניים – עימוד, הגהה, עיצוב כריכה, הדפסה והפצה.",
+      "url": "https://beinush.github.io/mikrabooks",
+      "telephone": "+972-58-7179103",
+      "email": "mikra@yefe.co.il",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IL"
+      },
+      "areaServed": "IL",
+      "foundingDate": "2017",
+      "numberOfEmployees": {"@type": "QuantitativeValue", "value": 10},
+      "sameAs": [],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "שירותי הוצאה לאור",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "עימוד מקצועי"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "הגהה לשונית"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "עיצוב כריכה"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "הדפסה והפצה"}}
+        ]
+      }
+    }
+    </script>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -587,28 +622,51 @@ const form = document.getElementById('contactForm');
 const btn = document.getElementById('submitBtn');
 const msg = document.getElementById('message');
 
+function showFormMsg(text, type) {
+    while (msg.firstChild) msg.removeChild(msg.firstChild);
+    const div = document.createElement('div');
+    div.className = 'alert alert-' + type;
+    div.textContent = text;
+    msg.appendChild(div);
+}
+
+function validateForm(data) {
+    if (!data.name || data.name.trim().length < 2) return 'נא להזין שם מלא (לפחות 2 תווים)';
+    const phoneClean = (data.phone || '').replace(/[\s\-]/g, '');
+    if (!/^0\d{8,9}$/.test(phoneClean)) return 'נא להזין מספר טלפון ישראלי תקין (לדוגמה: 058-7179103)';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email || '')) return 'נא להזין כתובת דוא"ל תקינה';
+    return null;
+}
+
 form.addEventListener('submit', e => {
     e.preventDefault();
-    btn.disabled = true;
-    btn.innerText = "שולח...";
 
     const formData = new FormData(form);
     const data = {};
     formData.forEach((value, key) => data[key] = value);
+
+    const validationError = validateForm(data);
+    if (validationError) {
+        showFormMsg(validationError, 'error');
+        return;
+    }
+
+    btn.disabled = true;
+    btn.innerText = "שולח...";
 
     fetch(scriptURL, {
         method: 'POST',
         body: JSON.stringify(data)
     })
     .then(() => {
-        msg.innerHTML = '<div class="alert alert-success">הפרטים נשלחו בהצלחה! ניצור איתך קשר בהקדם.</div>';
+        showFormMsg('הפרטים נשלחו בהצלחה! ניצור איתך קשר בהקדם.', 'success');
         form.reset();
         btn.disabled = false;
         btn.innerText = "שלח פנייה";
-        setTimeout(() => { msg.innerHTML = ''; }, 5000);
+        setTimeout(() => { while (msg.firstChild) msg.removeChild(msg.firstChild); }, 5000);
     })
     .catch(error => {
-        msg.innerHTML = '<div class="alert alert-error">שגיאה בשליחה, אנא נסה שנית.</div>';
+        showFormMsg('שגיאה בשליחה, אנא נסה שנית.', 'error');
         console.error('Error:', error.message);
         btn.disabled = false;
         btn.innerText = "שלח פנייה";
@@ -854,12 +912,26 @@ function renderBooks(filter) {
     if (q) {
         filtered = booksData.filter(b => b[0].includes(q) || b[1].includes(q) || b[2].includes(q));
     }
+    while (booksBody.firstChild) booksBody.removeChild(booksBody.firstChild);
     if (filtered.length === 0) {
-        booksBody.innerHTML = '<tr><td colspan="4" class="catalog-no-results">לא נמצאו ספרים תואמים</td></tr>';
+        const tr = document.createElement('tr');
+        const td = document.createElement('td');
+        td.colSpan = 4;
+        td.className = 'catalog-no-results';
+        td.textContent = 'לא נמצאו ספרים תואמים';
+        tr.appendChild(td);
+        booksBody.appendChild(tr);
     } else {
-        booksBody.innerHTML = filtered.map((b, i) =>
-            '<tr><td>' + (i + 1) + '</td><td class="book-name">' + b[0] + '</td><td>' + b[1] + '</td><td>' + b[2] + '</td></tr>'
-        ).join('');
+        filtered.forEach((b, i) => {
+            const tr = document.createElement('tr');
+            [i + 1, b[0], b[1], b[2]].forEach((val, col) => {
+                const td = document.createElement('td');
+                if (col === 1) td.className = 'book-name';
+                td.textContent = val;
+                tr.appendChild(td);
+            });
+            booksBody.appendChild(tr);
+        });
     }
     bookCount.textContent = q
         ? 'נמצאו ' + filtered.length + ' מתוך ' + booksData.length + ' ספרים'
