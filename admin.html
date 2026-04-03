@@ -240,16 +240,12 @@
         <p class="login-title">כניסה למערכת הניהול</p>
     </div>
 
-    <div class="error-msg" id="errorMsg">כתובת המייל או הסיסמה שגויים. נסה שנית.</div>
+    <div class="error-msg" id="errorMsg"></div>
 
     <form id="loginForm" novalidate>
         <div class="form-group">
-            <label for="email">כתובת מייל</label>
-            <input type="email" id="email" name="email" placeholder="admin@mikrabooks.com" autocomplete="email">
-        </div>
-        <div class="form-group">
-            <label for="password">סיסמה</label>
-            <input type="password" id="password" name="password" placeholder="••••••••" autocomplete="current-password">
+            <label for="accessCode">קוד גישה</label>
+            <input type="password" id="accessCode" name="accessCode" placeholder="הזן קוד גישה" autocomplete="current-password">
         </div>
         <button type="submit" class="btn-login" id="loginBtn">כניסה למערכת</button>
     </form>
@@ -262,7 +258,6 @@
     <div class="dashboard-header">
         <h1>לוח הניהול – מקרא הוצאה לאור</h1>
         <div>
-            <span class="admin-email" id="loggedInEmail"></span>
             <button class="btn-logout" id="logoutBtn">יציאה</button>
         </div>
     </div>
@@ -290,25 +285,23 @@
 (function () {
     'use strict';
 
-    // Credentials (Base64-encoded for obfuscation — change before production)
-    // email: admin@mikrabooks.com  |  password: Admin@Mikra2026
-    const C = ['YWRtaW5AbWlrcmFib29rcy5jb20=', 'QWRtaW5ATWlrcmEyMDI2'];
+    // Access code (Base64-encoded — change before production)
+    // Current code: Admin@Mikra2026
+    const VALID_CODE = 'QWRtaW5ATWlrcmEyMDI2';
 
     function b64(str) {
         return btoa(unescape(encodeURIComponent(str)));
     }
 
-    function credentialsMatch(email, password) {
-        return b64(email) === C[0] && b64(password) === C[1];
+    function codeMatches(code) {
+        return b64(code) === VALID_CODE;
     }
 
     const SESSION_KEY = 'mkr_admin_session';
 
-    function showDashboard(email) {
+    function showDashboard() {
         document.getElementById('loginCard').style.display = 'none';
-        const dash = document.getElementById('adminDashboard');
-        dash.style.display = 'block';
-        document.getElementById('loggedInEmail').textContent = email;
+        document.getElementById('adminDashboard').style.display = 'block';
     }
 
     function showLogin() {
@@ -318,20 +311,13 @@
 
     // Restore session
     try {
-        const session = sessionStorage.getItem(SESSION_KEY);
-        if (session) {
-            const data = JSON.parse(session);
-            if (data && data.email) showDashboard(data.email);
-        }
-    } catch (_) {
-        sessionStorage.removeItem(SESSION_KEY);
-    }
+        if (sessionStorage.getItem(SESSION_KEY) === '1') showDashboard();
+    } catch (_) {}
 
     // Logout
     document.getElementById('logoutBtn').addEventListener('click', function () {
         sessionStorage.removeItem(SESSION_KEY);
-        document.getElementById('email').value = '';
-        document.getElementById('password').value = '';
+        document.getElementById('accessCode').value = '';
         document.getElementById('errorMsg').classList.remove('visible');
         showLogin();
     });
@@ -340,52 +326,33 @@
     document.getElementById('loginForm').addEventListener('submit', function (e) {
         e.preventDefault();
 
-        const emailEl    = document.getElementById('email');
-        const passwordEl = document.getElementById('password');
-        const errorMsg   = document.getElementById('errorMsg');
-        const loginBtn   = document.getElementById('loginBtn');
+        const codeEl   = document.getElementById('accessCode');
+        const errorMsg = document.getElementById('errorMsg');
+        const loginBtn = document.getElementById('loginBtn');
+        const code     = codeEl.value;
 
-        const email    = emailEl.value.trim();
-        const password = passwordEl.value;
-
-        // Reset previous errors
         errorMsg.classList.remove('visible');
-        emailEl.classList.remove('error-field');
-        passwordEl.classList.remove('error-field');
+        codeEl.classList.remove('error-field');
 
-        // Both fields must be filled
-        let hasError = false;
-        if (!email) { emailEl.classList.add('error-field'); hasError = true; }
-        if (!password) { passwordEl.classList.add('error-field'); hasError = true; }
-        if (hasError) {
-            errorMsg.textContent = 'יש למלא את כל השדות.';
+        if (!code) {
+            codeEl.classList.add('error-field');
+            errorMsg.textContent = 'יש להזין קוד גישה.';
             errorMsg.classList.add('visible');
             return;
         }
 
-        // Email format
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-            emailEl.classList.add('error-field');
-            errorMsg.textContent = 'כתובת המייל אינה תקינה.';
-            errorMsg.classList.add('visible');
-            return;
-        }
-
-        // Verify credentials
         loginBtn.disabled = true;
         loginBtn.textContent = 'מתחבר...';
 
-        // Small delay to prevent brute-force
         setTimeout(function () {
-            if (credentialsMatch(email, password)) {
-                sessionStorage.setItem(SESSION_KEY, JSON.stringify({ email: email }));
-                showDashboard(email);
+            if (codeMatches(code)) {
+                sessionStorage.setItem(SESSION_KEY, '1');
+                showDashboard();
             } else {
-                emailEl.classList.add('error-field');
-                passwordEl.classList.add('error-field');
-                errorMsg.textContent = 'כתובת המייל או הסיסמה שגויים. נסה שנית.';
+                codeEl.classList.add('error-field');
+                errorMsg.textContent = 'קוד גישה שגוי. נסה שנית.';
                 errorMsg.classList.add('visible');
-                passwordEl.value = '';
+                codeEl.value = '';
             }
             loginBtn.disabled = false;
             loginBtn.textContent = 'כניסה למערכת';
